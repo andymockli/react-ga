@@ -216,7 +216,9 @@ var ReactGA = {
         fieldObject.timingLabel = _format(args.label);
       }
 
-      this.send(fieldObject);
+      if (typeof ga === 'function') {
+        ga('send', fieldObject);
+      }
     }
   },
 
@@ -279,7 +281,9 @@ var ReactGA = {
       }
 
       // Send to GA
-      this.send(fieldObject);
+      if (typeof ga === 'function') {
+        ga('send', fieldObject);
+      }
     }
   },
 
@@ -311,7 +315,9 @@ var ReactGA = {
       }
 
       // Send to GA
-      this.send(fieldObject);
+      if (typeof ga === 'function') {
+        ga('send', fieldObject);
+      }
     }
   },
 
@@ -478,7 +484,9 @@ var ReactGA = {
       fieldObject.hitCallback = clearableCallbackForGA;
 
       // Send to GA
-      this.send(fieldObject);
+      if (typeof ga === 'function') {
+        ga('send', fieldObject);
+      }
     } else {
       // if ga is not defined, return the callback so the application
       // continues to work as expected
